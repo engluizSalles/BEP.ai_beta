@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
-    "setup": "npm install && pip install notebooklm-py",
+    "setup": "npm install && pip install \"notebooklm-py[browser]\" && python -m playwright install chromium",
     "notebooklm": "node scripts/notebooklm.mjs",
     "notebooklm:login": "node scripts/notebooklm.mjs login",
     "notebooklm:login:fresh": "node scripts/notebooklm.mjs login --fresh",

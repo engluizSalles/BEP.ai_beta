@@ -10,11 +10,16 @@ A ponte é embutida no dev server do Vite (rotas `/api/notebooklm/*`), então
 ## Setup (uma vez por máquina)
 
 ```bash
-npm run setup            # = npm install && pip install notebooklm-py
+npm run setup
+# = npm install
+#   && pip install "notebooklm-py[browser]"     (CLI + Playwright)
+#   && python -m playwright install chromium     (baixa o Chromium do login)
 ```
 
-Requisitos: **Node** e **Python + pip** instalados. **O login é feito pelo app**
-(não precisa rodar nada no terminal).
+Requisitos: **Node** e **Python + pip** instalados. O `setup` já baixa o
+Chromium que o login usa — sem ele o login dá `exit 1` ("The browser window was
+closed during login") em máquinas novas. **O login é feito pelo app** (não
+precisa rodar nada no terminal).
 
 ## Uso em aula
 
