@@ -10,8 +10,11 @@
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
     "setup": "npm install && pip install notebooklm-py",
-    "notebooklm:login": "notebooklm login",
-    "notebooklm:check": "notebooklm status"
+    "notebooklm": "node scripts/notebooklm.mjs",
+    "notebooklm:login": "node scripts/notebooklm.mjs login",
+    "notebooklm:check": "node scripts/notebooklm.mjs status",
+    "notebooklm:logout": "node scripts/notebooklm.mjs auth logout",
+    "notebooklm:doctor": "node scripts/notebooklm.mjs doctor"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

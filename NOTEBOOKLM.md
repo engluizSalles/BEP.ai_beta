@@ -31,16 +31,30 @@ No app (tudo pela tela):
 > A fonte (edital) precisa já estar adicionada **dentro** do notebook no
 > NotebookLM. O app só pergunta; não envia arquivos.
 
-`npm run notebooklm:login` continua disponível como alternativa pelo terminal.
+Alternativas pelo terminal (funcionam em qualquer máquina, sem depender do PATH):
+
+```bash
+npm run notebooklm:login    # login pelo navegador
+npm run notebooklm:check    # status da sessão
+npm run notebooklm:logout   # limpa a sessão/cookies salvos
+npm run notebooklm:doctor   # diagnóstico de auth/instalação
+npm run notebooklm -- <cmd> # repassa qualquer comando ao CLI
+```
+
+> Esses scripts chamam `scripts/notebooklm.mjs`, um launcher Node que localiza o
+> CLI automaticamente — testa `notebooklm`, depois `python -m notebooklm`,
+> `py -m notebooklm` e `python3 -m notebooklm`. Por isso funcionam mesmo quando o
+> `pip` instala o executável **fora do PATH** (comum no Windows).
 
 ## Observações
 
 - **Só consulta**: a ponte usa apenas `notebooklm list` e `notebooklm ask`.
   Nunca gera podcasts/vídeos nem apaga nada.
 - **Latência**: cada consulta leva ~5-20s (round-trip ao Google).
-- **Auth por máquina/conta**: cada aluno roda `notebooklm login` com a própria
-  conta Google. Não é compartilhável.
-- **Erro "CLI não encontrado"**: rode `pip install notebooklm-py` e confirme que
-  o `notebooklm` está no PATH (reabra o terminal após instalar).
+- **Auth por máquina/conta**: cada aluno faz login com a própria conta Google.
+  Não é compartilhável.
+- **Erro "CLI não encontrado"**: rode `npm run setup` (ou `pip install
+  notebooklm-py`). Não é preciso ajustar o PATH — o launcher e o bridge do dev
+  server localizam o CLI via `python -m notebooklm` automaticamente.
 - A escolha de motor (DeepSeek/NotebookLM) e o notebook ficam salvos no
   navegador (localStorage).
