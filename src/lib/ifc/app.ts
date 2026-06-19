@@ -209,7 +209,7 @@ export async function mountIfcApp(host: HTMLElement): Promise<IfcApp> {
       setReport({ status: 'done', data });
     } catch (err: any) {
       console.error('Análise de consistência falhou:', err);
-      setReport({ status: 'error', error: err?.message ?? 'Falha na análise (verifique a chave da Groq).' });
+      setReport({ status: 'error', error: err?.message ?? 'Falha na análise (verifique a chave da DeepSeek).' });
     }
   }
 

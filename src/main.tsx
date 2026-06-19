@@ -7,8 +7,8 @@ import './index.css';
 
 if (!isAIConfigured()) {
   console.warn(
-    '[BEP.ai] GEMINI_API_KEY não configurada. Os recursos de IA ficarão indisponíveis. ' +
-      'Crie um arquivo .env na raiz com GEMINI_API_KEY="sua_chave".',
+    '[BEP.ai] VITE_DEEPSEEK_API_KEY não configurada. Os recursos de IA ficarão indisponíveis. ' +
+      'Crie um arquivo .env na raiz com VITE_DEEPSEEK_API_KEY="sua_chave".',
   );
 }
 

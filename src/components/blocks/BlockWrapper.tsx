@@ -37,7 +37,7 @@ export function BlockWrapper({ block, children }: BlockWrapperProps) {
       if (!block.isExpanded) toggleBlock(block.id);
     } catch (e) {
       console.error('Falha ao gerar seção:', e);
-      alert('Falha ao gerar a seção. Verifique a chave da Groq e tente novamente.');
+      alert('Falha ao gerar a seção. Verifique a chave da DeepSeek e tente novamente.');
     } finally {
       setGenerating(false);
     }

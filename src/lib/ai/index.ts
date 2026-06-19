@@ -1,5 +1,6 @@
 import type { AIProvider } from './types';
 import { ACTIVE_PROVIDER } from './config';
+import { deepseekProvider } from './providers/deepseek';
 import { geminiProvider } from './providers/gemini';
 import { groqProvider } from './providers/groq';
 
@@ -8,6 +9,7 @@ export type { AIProvider, GenerateRequest, ModelTier } from './types';
 // Registry of available providers. To add Claude (or any other), implement
 // ./providers/claude.ts and register it here, then point ACTIVE_PROVIDER at it.
 const PROVIDERS: Record<string, AIProvider> = {
+  deepseek: deepseekProvider,
   groq: groqProvider,
   gemini: geminiProvider,
 };
