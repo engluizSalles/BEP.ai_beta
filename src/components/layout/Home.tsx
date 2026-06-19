@@ -19,7 +19,7 @@ export function Home() {
       const data = JSON.parse(await file.text());
       if (!Array.isArray(data.blocks)) throw new Error('Arquivo inválido.');
       const name = data.name || file.name.replace(/\.json$/i, '');
-      importProject({ blocks: data.blocks, isoContext: data.isoContext }, name);
+      importProject({ blocks: data.blocks }, name);
     } catch (err) {
       console.error('Import failed', err);
       alert('Falha ao importar. Verifique se o .json é um projeto BEP válido.');
@@ -39,7 +39,7 @@ export function Home() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="max-w-2xl w-full z-10"
+        className="max-w-3xl w-full z-10"
       >
         {/* Cabeçalho */}
         <div className="text-center mb-10">

@@ -45,7 +45,7 @@ export function Sidebar() {
   };
 
   return (
-    <aside className="w-64 bg-white border-r border-slate-200 p-6 flex flex-col h-full shadow-sm z-10 overflow-y-auto shrink-0">
+    <aside className="w-72 bg-white border-r border-slate-200 p-6 flex flex-col h-full shadow-sm z-10 overflow-y-auto shrink-0">
       <div className="flex items-center gap-3 mb-8">
         <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center">
           <span className="text-white font-bold">BA</span>
